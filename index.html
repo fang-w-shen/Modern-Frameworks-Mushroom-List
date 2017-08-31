@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular Ice Cream Shopo</title>
+</head>
+<body >
+<div ng-app="TodoApp">
+
+ 	<section ng-controller="shroomlist">
+	 	<input type="text" ng-model="searchText" /><br>
+		Poisonous
+		<input type="radio" name="edible" ng-click="returnpoisonous()" /><br>
+
+		Non-Poisonous
+		<input type="radio" name="edible" ng-click="returnedible()" />
+		<div ng-repeat="item in mushrooms | filter: {description: searchText}">
+
+
+		<h1>{{item.name.toUpperCase()}}</h1>
+		
+		
+		<p>{{item.description}}</p>
+			<div ng-show="{{item.edible==true}}">
+				<p>Edible:{{item.edible}}</p>
+			</div>
+		</div>
+
+
+	</section>
+  
+ 
+  	
+
+ </div> 
+
+<script type="text/javascript" src="lib/node_modules/angular/angular.min.js"></script>
+<script type="text/javascript" src="lib/node_modules/angular-route/angular-route.js"></script>
+	
+<!-- <script type="text/javascript" src="dist/app.js"></script> -->
+<script type="text/javascript" src="app/app.js"></script>
+
+<script type="text/javascript" src="app/factory/factory.js"></script>
+<script type="text/javascript" src="app/controllers/mushrooms.js"></script>
+	
+</body>
+</html>

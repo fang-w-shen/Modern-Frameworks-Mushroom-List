@@ -1,0 +1,5 @@
+lib/node_modules
+sass/
+lib/.sass-cache
+partials
+css/
